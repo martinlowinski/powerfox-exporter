@@ -1,6 +1,7 @@
 # Powerfox Exporter
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/martinlowinski/powerfox-exporter)
+![Python Version](https://img.shields.io/badge/Python-3.12-3776AB.svg)
 
 Service to scrape [powerfox](https://www.powerfox.energy/?utm_source=github&utm_campaign=exporter) metrics and to export them for prometheus.
 
