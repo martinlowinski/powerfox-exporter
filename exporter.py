@@ -4,7 +4,7 @@ import os
 import time
 import logging
 import requests
-from prometheus_client import start_http_server, Gauge, Enum, Counter
+from prometheus_client import start_http_server, Gauge
 from requests.auth import HTTPBasicAuth
 from dateutil import parser
 from datetime import datetime
