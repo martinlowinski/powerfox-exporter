@@ -87,12 +87,12 @@ class AppMetrics:
             r = requests.get(url, auth=auth)
             r.raise_for_status()
         except requests.exceptions.HTTPError as errh:
-            logging.error("HTTP error:", errh)
+            logging.error("HTTP error: %s", errh)
             if r.status_code == requests.codes.too_many_requests:
                 logging.warning("Consider increasing the polling interval.")
             return None
         except requests.exceptions.RequestException as err:
-            logging.error("Request failed:", err)
+            logging.error("Request failed: %s", err)
             return None
 
         current = r.json()
