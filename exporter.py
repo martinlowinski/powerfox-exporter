@@ -89,7 +89,7 @@ class AppMetrics:
         except requests.exceptions.HTTPError as errh:
             logging.error("HTTP error:", errh)
             if r.status_code == requests.codes.too_many_requests:
-                logging.warn("Consider increasing the polling interval.")
+                logging.warning("Consider increasing the polling interval.")
             return None
         except requests.exceptions.RequestException as err:
             logging.error("Request failed:", err)
