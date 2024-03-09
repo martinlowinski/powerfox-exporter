@@ -3,7 +3,7 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/martinlowinski/powerfox-exporter)
 ![Python Version](https://img.shields.io/badge/Python-3.12-3776AB.svg)
 
-Service to scrape [powerfox](https://www.powerfox.energy/?utm_source=github&utm_campaign=exporter) metrics and to export them for prometheus.
+Service to scrape [powerfox](https://www.powerfox.energy/?utm_source=github&utm_campaign=exporter) metrics and to export them for prometheus. You can also find an introduction in [this](https://halfthetruth.de/2024/02/07/powerfox-exporter/) (en) and [this](https://www.powerfox.energy/visualisierung-auf-dem-desktop/) (de) blog post.
 
 ![Screenshot of the powerfox grafana dashboard](https://grafana.com/api/dashboards/20350/images/15494/image)
 
