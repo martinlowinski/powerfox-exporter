@@ -116,7 +116,7 @@ class AppMetrics:
 
 def main():
     exporter_port = int(os.getenv("EXPORTER_PORT", "9813"))
-    # Attention: The powerfox API is rate limited
+    # Attention: The powerfox API is rate limited, 60s is the smallest meaningful interval
     polling_interval_seconds = int(os.getenv("POLLING_INTERVAL_SECONDS", "60"))
     powerfox_user = os.getenv("POWERFOX_API_USER", "")
     powerfox_password = os.getenv("POWERFOX_API_PASSWORD", "")
