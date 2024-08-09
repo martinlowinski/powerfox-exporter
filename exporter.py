@@ -35,6 +35,11 @@ class AppMetrics:
                 "No device specified. Please use the environment variable POWERFOX_DEVICE to set the serial.")
             return
 
+        if not powerfox_user or not powerfox_password:
+            logging.error(
+                "Incomplete credentials. Please provide both, the powerfox user and password to access the API.")
+            return
+
         self.polling_interval_seconds = polling_interval_seconds
         self.powerfox_user = powerfox_user
         self.powerfox_password = powerfox_password
