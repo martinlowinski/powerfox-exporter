@@ -1,5 +1,7 @@
 FROM python:3.12-slim-bullseye
 
+LABEL description="Powerfox prometheus exporter"
+
 EXPOSE 9813
 
 WORKDIR /app
