@@ -100,7 +100,11 @@ class AppMetrics:
             logging.error("Request failed: %s", err)
             return None
 
-        current = r.json()
+        try:
+            current = r.json()
+        except ValueError as err:
+            logging.error("Failed to parse JSON response: %s", err)
+            return None
 
         self.device_consumption.labels(
             self.powerfox_device
