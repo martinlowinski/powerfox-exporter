@@ -11,3 +11,8 @@ README.md
 venv
 .git
 .envs/
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
