@@ -89,8 +89,11 @@ class AppMetrics:
             self.powerfox_password
         )
         try:
-            r = requests.get(url, auth=auth)
+            r = requests.get(url, auth=auth, timeout=30)
             r.raise_for_status()
+        except requests.exceptions.Timeout:
+            logging.error("Request timed out")
+            return None
         except requests.exceptions.HTTPError as errh:
             logging.error("HTTP error: %s", errh)
             if r.status_code == requests.codes.too_many_requests:
