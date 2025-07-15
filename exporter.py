@@ -62,6 +62,10 @@ class AppMetrics:
             "powerfox_device_outdated",
             "Device data is currently outdated",
             ["device_id"])
+        self.last_successful_scrape = Gauge(
+            "powerfox_api_last_successful_scrape_timestamp",
+            "Unix timestamp of the last successful API scrape",
+            ["device_id"])
 
     def build_url(self, url: str, **kwargs) -> str:
         # Build the request URL with API version and additional args
@@ -105,6 +109,9 @@ class AppMetrics:
 
         try:
             current = r.json()
+            self.last_successful_scrape.labels(
+                self.powerfox_device
+            ).set(time.time())
         except ValueError as err:
             logging.error("Failed to parse JSON response: %s", err)
             return None
